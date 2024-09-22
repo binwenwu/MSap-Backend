@@ -1,0 +1,265 @@
+{
+  "QgsProcessingParameterAnnotationLayer": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterAuthConfig": {},
+  "QgsProcessingParameterBand": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "QgsProcessingParameterBoolean": {
+    "wps_type": "LiteralInput",
+    "data_type": "boolean"
+  },
+  "QgsProcessingParameterProviderConnection": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterColor": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterCoordinateOperation": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterCrs": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterDatabaseSchema": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterDatabaseTable": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterDateTime": {},
+  "QgsProcessingParameterDistance": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "QgsProcessingParameterDxfLayers": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "application/zip"
+    ]
+  },
+  "QgsProcessingParameterEnum": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "QgsProcessingParameterExpression": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterExtent": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterField": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterAggregate": {},
+  "QgsProcessingParameterFieldMapping": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterFile": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterFileDestination": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterFolderDestination": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterGeometry": {},
+  "QgsProcessingParameterNumber.Integer": {},
+  "QgsProcessingParameterLayout": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterLayoutItem": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterMapLayer": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff",
+      "application/zip",
+      "application/geo+json",
+      "application/json"
+    ]
+  },
+  "QgsProcessingParameterMapTheme": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterMatrix": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterMeshDatasetGroups": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterMeshDatasetTime": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterMeshLayer": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff"
+    ]
+  },
+  "QgsProcessingParameterMultipleLayers": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff",
+      "application/zip",
+      "application/geo+json",
+      "application/json"
+    ]
+  },
+  "QgsProcessingParameterNumber.Double": {},
+  "QgsProcessingParameterPoint": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterPointCloudAttribute": {},
+  "QgsProcessingParameterPointCloudDestination": {},
+  "QgsProcessingParameterPointCloudLayer": {},
+  "QgsProcessingParameterRange": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterRasterLayer": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff"
+    ]
+  },
+  "QgsProcessingParameterRasterDestination": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff"
+    ]
+  },
+  "QgsProcessingParameterScale": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "QgsProcessingParameterFeatureSink": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "application/zip"
+    ]
+  },
+  "QgsProcessingParameterTinInputLayers": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterFeatureSource": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "application/zip"
+    ]
+  },
+  "QgsProcessingParameterString": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingParameterVectorLayer": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "application/zip"
+    ]
+  },
+  "QgsProcessingParameterVectorDestination": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "application/zip"
+    ]
+  },
+  "QgsProcessingParameterVectorTileDestination": {},
+  "QgsProcessingOutputBoolean": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputNumber": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputFile": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputFolder": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputHtml": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputLayerDefinition": {},
+  "QgsProcessingOutputMapLayer": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputMultipleLayers": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputPointCloudLayer": {},
+  "QgsProcessingOutputRasterLayer": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputString": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputVectorLayer": {
+    "wps_type": "LiteralInput",
+    "data_type": "string"
+  },
+  "QgsProcessingOutputVectorTileLayer": {},
+  "ParameterHeatmapPixelSize": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "QgsProcessingParameterNumber": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "ParameterPixelSize": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "QgsProcessingParameterDuration": {
+    "wps_type": "LiteralInput",
+    "data_type": "float"
+  },
+  "ParameterVrtDestination": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff"
+    ]
+  },
+  "ParameterVectorVrtDestination": {
+    "wps_type": "ComplexInput",
+    "supported_formats": [
+      "image/tiff"
+    ]
+  }
+}

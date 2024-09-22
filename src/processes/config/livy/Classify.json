@@ -1,0 +1,45 @@
+{
+  "identifier": "Classify",
+  "title": "Classify Train Process",
+  "abstract": "Executes a Classify algorithm using the specified input. Executes through Spark.",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "featuresPath",
+      "title": "The path of feature coverage.",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "modelPath",
+      "title": "The path of saved model.",
+      "data_type": "directory",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "classifiedOutputPath",
+      "title": "The output path of prediction coverage.",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "parameters": [
+        "featuresPath", "modelPath", "classifiedOutputPath"
+      ],
+      "code": "whu.edu.cn.oge.TriggerEdu.classify(sc, {featuresPath}, {modelPath}, {classifiedOutputPath})"
+    }
+  ],
+  "base_url": "http://172.22.1.19:8998",
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

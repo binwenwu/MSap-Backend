@@ -1,0 +1,193 @@
+{
+  "identifier": "SVM",
+  "title": "Support Vector Machine Classification Process",
+  "abstract": "Executes SVM classification using specified input files and parameters",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "GRIDS",
+      "title": "Grids File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "SCALING",
+      "title": "Scaling",
+      "data_type": "integer",
+      "optional": true,
+      "default": 2
+    },
+    {
+      "identifier": "MESSAGE",
+      "title": "Message",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "identifier": "MODEL_SRC",
+      "title": "Model Source",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "identifier": "ROI",
+      "title": "Region of Interest File Path",
+      "data_type": "feature",
+      "formats": "shp",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "ROI_ID",
+      "title": "ROI ID",
+      "data_type": "string",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "SVM_TYPE",
+      "title": "SVM Type",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "identifier": "KERNEL_TYPE",
+      "title": "Kernel Type",
+      "data_type": "integer",
+      "optional": true,
+      "default": 2
+    },
+    {
+      "identifier": "DEGREE",
+      "title": "Degree",
+      "data_type": "integer",
+      "optional": true,
+      "default": 3
+    },
+    {
+      "identifier": "GAMMA",
+      "title": "Gamma",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "COEF0",
+      "title": "Coefficient 0",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "COST",
+      "title": "Cost",
+      "data_type": "float",
+      "optional": true,
+      "default": 1.0
+    },
+    {
+      "identifier": "NU",
+      "title": "Nu",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.5
+    },
+    {
+      "identifier": "EPS_SVR",
+      "title": "Epsilon for SVR",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.1
+    },
+    {
+      "identifier": "CACHE_SIZE",
+      "title": "Cache Size",
+      "data_type": "float",
+      "optional": true,
+      "default": 100.0
+    },
+    {
+      "identifier": "EPS",
+      "title": "Epsilon",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.001
+    },
+    {
+      "identifier": "SHRINKING",
+      "title": "Shrinking",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    },
+    {
+      "identifier": "PROBABILITY",
+      "title": "Probability",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    },
+    {
+      "identifier": "CROSSVAL",
+      "title": "Cross Validation",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "CLASSES",
+      "title": "Classes File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "CLASSES_LUT",
+      "title": "Classes Lookup Table",
+      "data_type": "table",
+      "formats": "dbf",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash svm.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-GRIDS", "GRIDS",
+        "-SCALING", "SCALING",
+        "-MESSAGE", "MESSAGE",
+        "-MODEL_SRC", "MODEL_SRC",
+        "-ROI", "ROI",
+        "-ROI_ID", "ROI_ID",
+        "-SVM_TYPE", "SVM_TYPE",
+        "-KERNEL_TYPE", "KERNEL_TYPE",
+        "-DEGREE", "DEGREE",
+        "-GAMMA", "GAMMA",
+        "-COEF0", "COEF0",
+        "-COST", "COST",
+        "-NU", "NU",
+        "-EPS_SVR", "EPS_SVR",
+        "-CACHE_SIZE", "CACHE_SIZE",
+        "-EPS", "EPS",
+        "-SHRINKING", "SHRINKING",
+        "-PROBABILITY", "PROBABILITY",
+        "-CROSSVAL", "CROSSVAL",
+        "-CLASSES", "CLASSES",
+        "-CLASSES_LUT", "CLASSES_LUT"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

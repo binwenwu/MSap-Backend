@@ -1,0 +1,139 @@
+{
+  "identifier": "MinimumDistance",
+  "title": "Minimum Distance Classification Process",
+  "abstract": "Executes Minimum Distance classification using specified input files and parameters",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "GRIDS",
+      "title": "Grids File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "NORMALISE",
+      "title": "Normalise",
+      "data_type": "boolean",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "TRAIN_WITH",
+      "title": "Train With",
+      "data_type": "integer",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "TRAINING",
+      "title": "Training File Path",
+      "data_type": "feature",
+      "formats": "shp",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "TRAINING_CLASS",
+      "title": "Training Class",
+      "data_type": "string",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "TRAIN_SAMPLES",
+      "title": "Train Samples File Path",
+      "data_type": "feature",
+      "formats": "shp",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "TRAIN_BUFFER",
+      "title": "Train Buffer",
+      "data_type": "float",
+      "optional": true,
+      "default": 1.0
+    },
+    {
+      "identifier": "THRESHOLD_DIST",
+      "title": "Threshold Distance",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "THRESHOLD_ANGLE",
+      "title": "Threshold Angle",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "THRESHOLD_PROB",
+      "title": "Threshold Probability",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.1
+    },
+    {
+      "identifier": "RELATIVE_PROB",
+      "title": "Relative Probability",
+      "data_type": "float",
+      "optional": true,
+      "default": 1
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "CLASSES",
+      "title": "Classes File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "CLASSES_LUT",
+      "title": "Classes Lookup Table",
+      "data_type": "table",
+      "formats": "dbf",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "QUALITY",
+      "title": "Quality File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash MinimumDistance.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-GRIDS", "GRIDS",
+        "-NORMALISE", "NORMALISE",
+        "-TRAIN_WITH", "TRAIN_WITH",
+        "-TRAINING", "TRAINING",
+        "-TRAINING_CLASS", "TRAINING_CLASS",
+        "-TRAIN_SAMPLES", "TRAIN_SAMPLES",
+        "-TRAIN_BUFFER", "TRAIN_BUFFER",
+        "-THRESHOLD_DIST", "THRESHOLD_DIST",
+        "-THRESHOLD_ANGLE", "THRESHOLD_ANGLE",
+        "-THRESHOLD_PROB", "THRESHOLD_PROB",
+        "-RELATIVE_PROB", "RELATIVE_PROB",
+        "-CLASSES", "CLASSES",
+        "-CLASSES_LUT", "CLASSES_LUT",
+        "-QUALITY", "QUALITY"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

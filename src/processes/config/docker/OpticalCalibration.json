@@ -1,0 +1,153 @@
+{
+  "identifier": "OpticalCalibration",
+  "title": "Optical Calibration Process",
+  "abstract": "Executes optical calibration using specified input files and parameters",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "IN",
+      "title": "Input Image File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "LEVEL",
+      "title": "Calibration Level",
+      "data_type": "string",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "MILLI",
+      "title": "Milli Conversion",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    },
+    {
+      "identifier": "CLAMP",
+      "title": "Clamp Values",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "ACQUI_GAINBIAS",
+      "title": "Acquisition Gain Bias File Path",
+      "data_type": "text",
+      "formats": "txt",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "ACQUI_SOLARILLUMINATIONS",
+      "title": "Acquisition Solar Illuminations File Path",
+      "data_type": "text",
+      "formats": "txt",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "ACQUI_MINUTE",
+      "title": "Acquisition Minute",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "identifier": "ACQUI_HOUR",
+      "title": "Acquisition Hour",
+      "data_type": "integer",
+      "optional": true,
+      "default": 12
+    },
+    {
+      "identifier": "ACQUI_DAY",
+      "title": "Acquisition Day",
+      "data_type": "integer",
+      "optional": true,
+      "default": 1
+    },
+    {
+      "identifier": "ACQUI_MONTH",
+      "title": "Acquisition Month",
+      "data_type": "integer",
+      "optional": true,
+      "default": 1
+    },
+    {
+      "identifier": "ACQUI_YEAR",
+      "title": "Acquisition Year",
+      "data_type": "integer",
+      "optional": true,
+      "default": 2000
+    },
+    {
+      "identifier": "ACQUI_SUN_ELEV",
+      "title": "Acquisition Sun Elevation",
+      "data_type": "float",
+      "optional": true,
+      "default": 90.0
+    },
+    {
+      "identifier": "ACQUI_SUN_AZIM",
+      "title": "Acquisition Sun Azimuth",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "ACQUI_VIEW_ELEV",
+      "title": "Acquisition View Elevation",
+      "data_type": "float",
+      "optional": true,
+      "default": 90.0
+    },
+    {
+      "identifier": "ACQUI_VIEW_AZIM",
+      "title": "Acquisition View Azimuth",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "OUT",
+      "title": "Output Image File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash OpticalCalibration.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-IN", "IN",
+        "-LEVEL", "LEVEL",
+        "-MILLI", "MILLI",
+        "-CLAMP", "CLAMP",
+        "-ACQUI_GAINBIAS", "ACQUI_GAINBIAS",
+        "-ACQUI_SOLARILLUMINATIONS", "ACQUI_SOLARILLUMINATIONS",
+        "-ACQUI_MINUTE", "ACQUI_MINUTE",
+        "-ACQUI_HOUR", "ACQUI_HOUR",
+        "-ACQUI_DAY", "ACQUI_DAY",
+        "-ACQUI_MONTH", "ACQUI_MONTH",
+        "-ACQUI_YEAR", "ACQUI_YEAR",
+        "-ACQUI_SUN_ELEV", "ACQUI_SUN_ELEV",
+        "-ACQUI_SUN_AZIM", "ACQUI_SUN_AZIM",
+        "-ACQUI_VIEW_ELEV", "ACQUI_VIEW_ELEV",
+        "-ACQUI_VIEW_AZIM", "ACQUI_VIEW_AZIM",
+        "-OUT", "OUT"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

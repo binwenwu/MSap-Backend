@@ -1,0 +1,49 @@
+{
+  "identifier": "SpatialConnectivity",
+  "title": "Spatial Connectivity Process",
+  "abstract": "Executes a spatial connectivity algorithm using the specified input file",
+  "version": "1.0.0",
+  "docker": false,
+  "inputs": [
+    {
+      "identifier": "FILE_PATH",
+      "title": "Input File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "K",
+      "title": "K Value for Kmeans",
+      "data_type": "integer",
+      "formats": "integer",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "OUTPUT_FILE_PATH",
+      "title": "Output File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash spatialConnectivity.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm/",
+      "parameters": [
+        "-file_path", "FILE_PATH",
+        "-output_file_path", "OUTPUT_FILE_PATH",
+        "-k", "K"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

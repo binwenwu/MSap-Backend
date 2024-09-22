@@ -1,0 +1,65 @@
+{
+  "identifier": "ImageFusion",
+  "title": "Image Fusion Process",
+  "abstract": "Executes IHS fusion algorithm using specified input files and bands",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "MUX",
+      "title": "MUX File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "PAN",
+      "title": "PAN File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "BANDS",
+      "title": "Bands for Fusion, not a real list",
+      "data_type": "list[int]",
+      "optional": false,
+      "default": [2,3,4]
+    },
+    {
+      "identifier": "METHOD",
+      "title": "Method for Image Fusion",
+      "data_type": "string",
+      "allowed_values": ["PCA", "IHS", "brovey", "Pansharpening"],
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "OUTPUT",
+      "title": "Output File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash imageFusion.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm/",
+      "parameters": [
+        "-mux", "MUX",
+        "-pan", "PAN",
+        "-bands", "BANDS",
+        "-method", "METHOD",
+        "-output", "OUTPUT"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

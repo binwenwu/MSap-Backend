@@ -1,0 +1,152 @@
+{
+  "identifier": "Statistics",
+  "title": "statistics analysis Process",
+  "abstract": "Executes statistics analysis algorithm using specified input files and bands",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "GRIDS",
+      "title": "GRIDS File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "POLYGONS",
+      "title": "Polygon File Path",
+      "data_type": "feature",
+      "formats": "shp",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "NAMING",
+      "title": "naming for analysis",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "identifier": "METHOD",
+      "title": "Method for analysis",
+      "data_type": "integer",
+      "optional": true,
+      "default": 1
+    },
+    {
+      "identifier": "PARALLELIZED",
+      "title": "Parallel for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    },
+    {
+      "identifier": "COUNT",
+      "title": "count for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "MIN",
+      "title": "min for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "MAX",
+      "title": "MAX for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "RANGE",
+      "title": "range for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "SUM",
+      "title": "sum for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "MEAN",
+      "title": "mean for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "VAR",
+      "title": "var for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "STDDEV",
+      "title": "STDDEV for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "identifier": "GINI",
+      "title": "gini for analysis",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    },
+    {
+      "identifier": "QUANTILES",
+      "title": "quantiles for analysis",
+      "data_type": "string",
+      "optional": true,
+      "default": "5"
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "RESULT",
+      "title": "Rresult File Path",
+      "data_type": "table",
+      "formats": "dbf",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+    "script": "bash static.sh",
+    "working_directory": "/mnt/storage/pythonAlgorithm",
+    "parameters": [
+      "-GRIDS", "GRIDS",
+      "-POLYGONS", "POLYGONS",
+      "-NAMING", "NAMING",
+      "-METHOD", "METHOD",
+      "-PARALLELIZED", "PARALLELIZED",
+      "-COUNT", "COUNT",
+      "-MIN", "MIN",
+      "-MAX", "MAX",
+      "-RANGE", "RANGE",
+      "-SUM", "SUM",
+      "-MEAN", "MEAN",
+      "-VAR", "VAR",
+      "-STDDEV", "STDDEV",
+      "-GINI", "GINI",
+      "-QUANTILES", "QUANTILES",
+      "-RESULT", "RESULT"
+    ]
+  }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

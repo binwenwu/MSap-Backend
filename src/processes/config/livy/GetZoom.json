@@ -1,0 +1,46 @@
+{
+  "identifier": "GetZoom",
+  "title": "GetZoom Process",
+  "abstract": "Executes a GetZoom algorithm using the specified input file. Executes through Spark.",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "inputPath",
+      "title": "Input File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "extent",
+      "title": "Spatial range",
+      "data_type": "string",
+      "optional": false,
+      "default": null,
+      "return": "$extent"
+    },
+    {
+      "identifier": "zoom",
+      "title": "level of the pyramid",
+      "data_type": "integer",
+      "optional": false,
+      "default": null,
+      "return": "$zoom"
+    }
+  ],
+  "execution": [
+    {
+      "parameters": [
+        "inputPath"
+      ],
+      "code": "whu.edu.cn.oge.TriggerEdu.getZoom(sc,{inputPath})"
+    }
+  ],
+  "base_url": "http://172.22.1.19:8998",
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

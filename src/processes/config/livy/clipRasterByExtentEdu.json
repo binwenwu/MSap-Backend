@@ -1,0 +1,73 @@
+{
+  "identifier": "ClipRasterByExtentEdu",
+  "title": "clipRasterByExtentEdu Process",
+  "abstract": "Executes a clipRasterByExtentEdu algorithm using the specified input. Executes through Spark.",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "inputPath",
+      "title": "The input raster path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "projwin",
+      "title": "The projection window",
+      "data_type": "string",
+      "optional": true,
+      "default": ""
+    },
+    {
+      "identifier": "extra",
+      "title": "Extra parameters",
+      "data_type": "string",
+      "optional": true,
+      "default": ""
+    },
+    {
+      "identifier": "nodata",
+      "title": "No data value",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "dataType",
+      "title": "Data type",
+      "data_type": "string",
+      "optional": true,
+      "default": "0"
+    },
+    {
+      "identifier": "options",
+      "title": "Options",
+      "data_type": "string",
+      "optional": true,
+      "default": ""
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "outputPath",
+      "title": "The output path of the result",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "parameters": [
+        "inputPath", "outputPath", "projwin", "extra", "nodata", "dataType", "options"
+      ],
+      "code": "whu.edu.cn.oge.TriggerEdu.clipRasterByExtentEdu(sc,{inputPath},{outputPath},{projwin},{extra},{nodata},{dataType},{options})"
+    }
+  ],
+  "base_url": "http://172.22.1.19:8998",
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

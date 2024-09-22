@@ -1,0 +1,39 @@
+{
+  "identifier": "OrthoRectification",
+  "title": "Ortho Rectification Process",
+  "abstract": "Executes ortho rectification using specified input and output files",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "IO_IN",
+      "title": "Input Image File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "IO_OUT",
+      "title": "Output Image File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash OrthoRectification.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-IO_IN", "IO_IN",
+        "-IO_OUT", "IO_OUT"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

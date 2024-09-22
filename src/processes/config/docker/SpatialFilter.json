@@ -1,0 +1,49 @@
+{
+  "identifier": "SpatialFilter",
+  "title": "Spatial Filter Process",
+  "abstract": "Executes a spatial filtering algorithm using the specified input file",
+  "version": "1.0.0",
+  "docker": false,
+  "inputs": [
+    {
+      "identifier": "FILE_PATH",
+      "title": "Input File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "FILTER_TYPE",
+      "title": "Filter Type",
+      "data_type": "string",
+      "allowed_values": ["mean", "gaussian", "median", "laplacian", "sobel", "max", "min", "highpass"],
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "OUTPUT_FILE_PATH",
+      "title": "Output File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash spatialFilter.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm/",
+      "parameters": [
+        "-file_path", "FILE_PATH",
+        "-output_file_path", "OUTPUT_FILE_PATH",
+        "-filter_type", "FILTER_TYPE"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

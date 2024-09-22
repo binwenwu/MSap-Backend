@@ -1,0 +1,63 @@
+{
+  "identifier": "Sieve",
+  "title": "Sieve Analysis Process",
+  "abstract": "Executes sieve analysis on the input file with specified parameters",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "input",
+      "title": "Input File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "threshold",
+      "title": "Threshold Value",
+      "data_type": "integer",
+      "optional": true,
+      "default": 10
+    },
+    {
+      "identifier": "eightConnectedness",
+      "title": "Eight Connectedness",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    },
+    {
+      "identifier": "noMask",
+      "title": "No Mask",
+      "data_type": "boolean",
+      "optional": true,
+      "default": false
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "output",
+      "title": "Output File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash sieve.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-input", "input",
+        "-threshold", "threshold",
+        "-eightConnectedness", "eightConnectedness",
+        "-noMask", "noMask",
+        "-output", "output"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

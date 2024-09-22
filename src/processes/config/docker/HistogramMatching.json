@@ -1,0 +1,47 @@
+{
+  "identifier": "HistogramMatching",
+  "title": "Histogram Matching Process",
+  "abstract": "Matches the histogram of a grid to a reference grid",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "GRID",
+      "title": "Grid File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "REFERENCE",
+      "title": "Reference File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "MATCHED",
+      "title": "Matched Output",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": {
+    "script": "bash Histo.sh",
+    "working_directory": "/mnt/storage/pythonAlgorithm",
+    "ignore_errors": false,
+    "parameters": [
+      "-GRID", "GRID",
+      "-REFERENCE", "REFERENCE",
+      "-MATCHED", "MATCHED"
+    ]
+  },
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

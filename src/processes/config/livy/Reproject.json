@@ -1,0 +1,52 @@
+{
+  "identifier": "Reproject",
+  "title": "Reproject Process",
+  "abstract": "Executes a Reproject algorithm using the specified input file. Executes through Spark.",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "inputPath",
+      "title": "Input File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "crs",
+      "title": "Coordinate Reference System",
+      "data_type": "string",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "scale",
+      "title": "Resolution Scale",
+      "data_type": "float",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "outputPath",
+      "title": "Output File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "parameters": [
+        "inputPath", "outputPath", "crs", "scale"
+      ],
+      "code": "whu.edu.cn.oge.TriggerEdu.reprojectEdu(sc,{inputPath},{outputPath},{crs},{scale})"
+    }
+  ],
+  "base_url": "http://172.22.1.19:8998",
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

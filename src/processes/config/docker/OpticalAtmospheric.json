@@ -1,0 +1,121 @@
+{
+  "identifier": "OpticalAtmospheric",
+  "title": "Optical Atmospheric Correction Process",
+  "abstract": "Executes atmospheric correction on optical imagery using specified input files and parameters",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "IN",
+      "title": "Input Image File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "LEVEL",
+      "title": "Calibration Level",
+      "data_type": "string",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "ACQUI_GAINBIAS",
+      "title": "Acquisition Gain Bias File Path",
+      "data_type": "text",
+      "formats": "txt",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "ACQUI_SOLARILLUMINATIONS",
+      "title": "Acquisition Solar Illuminations File Path",
+      "data_type": "text",
+      "formats": "txt",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "ATMO_AEROSOL",
+      "title": "Atmospheric Aerosol Model",
+      "data_type": "string",
+      "optional": true,
+      "default": "continental"
+    },
+    {
+      "identifier": "ATMO_OZ",
+      "title": "Atmospheric Ozone Content",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.0
+    },
+    {
+      "identifier": "ATMO_WA",
+      "title": "Atmospheric Water Vapor Content",
+      "data_type": "float",
+      "optional": true,
+      "default": 2.5
+    },
+    {
+      "identifier": "ATMO_PRESSURE",
+      "title": "Atmospheric Pressure",
+      "data_type": "float",
+      "optional": true,
+      "default": 1030.0
+    },
+    {
+      "identifier": "ATMO_OPT",
+      "title": "Atmospheric Optical Thickness",
+      "data_type": "float",
+      "optional": true,
+      "default": 0.2
+    },
+    {
+      "identifier": "ATMO_RADIUS",
+      "title": "Atmospheric Aerosol Mean Radius",
+      "data_type": "integer",
+      "optional": true,
+      "default": 2
+    },
+    {
+      "identifier": "ATMO_PIXSIZE",
+      "title": "Atmospheric Pixel Size",
+      "data_type": "float",
+      "optional": true,
+      "default": 1.0
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "OUT",
+      "title": "Output Image File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash OpticalAtmospheric.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-IN", "IN",
+        "-LEVEL", "LEVEL",
+        "-ACQUI_GAINBIAS", "ACQUI_GAINBIAS",
+        "-ACQUI_SOLARILLUMINATIONS", "ACQUI_SOLARILLUMINATIONS",
+        "-ATMO_AEROSOL", "ATMO_AEROSOL",
+        "-ATMO_OZ", "ATMO_OZ",
+        "-ATMO_WA", "ATMO_WA",
+        "-ATMO_PRESSURE", "ATMO_PRESSURE",
+        "-ATMO_OPT", "ATMO_OPT",
+        "-ATMO_RADIUS", "ATMO_RADIUS",
+        "-ATMO_PIXSIZE", "ATMO_PIXSIZE",
+        "-OUT", "OUT"
+      ]
+    }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

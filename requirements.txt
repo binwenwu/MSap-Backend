@@ -1,0 +1,7 @@
+Flask
+py-consul
+pymongo
+redis
+pywps
+requests
+python-magic

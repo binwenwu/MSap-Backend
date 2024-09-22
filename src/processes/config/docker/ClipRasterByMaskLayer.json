@@ -1,0 +1,48 @@
+{
+  "identifier": "ClipRasterByMaskLayer",
+  "title": "mosaicEdu Process",
+  "abstract": "Executes a mosaicEdu algorithm using the specified input. Executes through Spark.",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "input",
+      "title": "The list of feature coverage",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "mask",
+      "title": "the mask layer",
+      "data_type": "feature",
+      "formats": "shp",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "output",
+      "title": "The output path of the result",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash clip.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-input","input",
+        "-mask","mask",
+        "-output","output"
+      ]
+     }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

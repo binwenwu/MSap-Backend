@@ -1,0 +1,74 @@
+{
+  "identifier": "ConfusionMatrixEval",
+  "title": "Confusion Matrix Evaluation Process",
+  "abstract": "Executes a script to generate a confusion matrix using specified input files",
+  "version": "1.0.0",
+  "use_docker": false,
+  "inputs": [
+    {
+      "identifier": "TRUE_TIF",
+      "title": "True TIF File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "PRED_TIF",
+      "title": "Predicted TIF File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "OUTPUT_TIF",
+      "title": "Output TIF File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "OUTPUT_FIG",
+      "title": "Output Figure Path",
+      "data_type": "file",
+      "formats": "jpg",
+      "optional": false,
+      "default": null
+    },
+        {
+      "identifier": "OVERALL_ACCURACY",
+      "title": "Overall Accuracy",
+      "data_type": "float",
+      "optional": false,
+      "default": null,
+      "re": "Overall Accuracy:\\s*([\\d.]+)"
+    },
+    {
+      "identifier": "KAPPA_COEFFICIENT",
+      "title": "Kappa Coefficient",
+      "data_type": "float",
+      "optional": false,
+      "default": null,
+      "re": "Kappa Coefficient:\\s*([\\d.]+)"
+    }
+  ],
+  "execution": [
+    {
+      "script": "bash accuracyEvaluation.sh",
+      "working_directory": "/mnt/storage/pythonAlgorithm",
+      "parameters": [
+        "-true_tif", "TRUE_TIF",
+        "-pred_tif", "PRED_TIF",
+        "-output_tif", "OUTPUT_TIF",
+        "-output_fig", "OUTPUT_FIG"
+      ]
+    }
+  ],
+    "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "identifier": "SampleFilter",
+  "title": "Sample Filter Process",
+  "abstract": "Executes Sample Filter algorithm using specified input files and bands",
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "identifier": "INPUT",
+      "title": "INPUT File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    },
+    {
+      "identifier": "METHOD",
+      "title": "Method for Filtering",
+      "data_type": "integer",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "identifier": "KERNEL_TYPE",
+      "title": "kernel type",
+      "data_type": "integer",
+      "optional": true,
+      "default": 1
+    },
+    {
+      "identifier": "KERNEL_RADIUS",
+      "title": "kernel radius",
+      "data_type": "integer",
+      "optional": true,
+      "default": 1
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "RESULT",
+      "title": "Rresult File Path",
+      "data_type": "coverage",
+      "formats": "tif",
+      "optional": false,
+      "default": null
+    }
+  ],
+  "execution": [
+    {
+    "script": "bash sampleFilter.sh",
+    "working_directory": "/mnt/storage/pythonAlgorithm",
+    "parameters": [
+      "-INPUT", "INPUT",
+      "-METHOD", "METHOD",
+      "-KERNEL_TYPE", "KERNEL_TYPE",
+      "-KERNEL_RADIUS", "KERNEL_RADIUS",
+      "-RESULT", "RESULT"
+    ]
+  }
+  ],
+  "paths": {
+    "host_output_path": "/mnt/storage/algorithmData_edu"
+  }
+}
